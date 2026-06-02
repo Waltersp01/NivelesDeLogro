@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+h1 {
+    max-width: 1200px;
+    margin: 30px auto 20px;
+    padding: 28px;
+    background: linear-gradient(135deg, #0f172a, #2563eb);
+    color: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+}
+
+.panel {
+    max-width: 1200px;
+    margin: 0 auto 22px;
+    background: white;
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.filtros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.campo label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+input[type="file"],
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+    font-size: 15px;
+    outline: none;
+}
+
+input[type="file"]:focus,
+select:focus {
+    border-color: #2563eb;
+    background: white;
+}
+
+.colores h3 {
+    margin-top: 0;
+    color: #0f172a;
+}
+
+.panel-colores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    align-items: center;
+}
+
+.panel-colores label {
+    font-weight: bold;
+}
+
+.panel-colores input[type="color"] {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* DASHBOARD PRINCIPAL CORREGIDO */
+.dashboard-competencia {
+    max-width: 1200px;
+    margin: 0 auto 22px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 18px;
+    align-items: stretch;
+}
+
+.card-estadistica,
+.card-grafico {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.card-estadistica {
+    min-height: 380px;
+    width: 100%;
+}
+
+.card-grafico {
+    min-height: 420px;
+    width: 100%;
+}
+
+#resultadoCompetencia h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #2563eb;
+}
+
+#resultadoCompetencia p {
+    background: #f8fafc;
+    border-left: 6px solid #2563eb;
+    padding: 14px 16px;
+    margin: 12px 0;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    word-break: normal;
+}
+
+.mensaje {
+    color: #64748b;
+    font-weight: normal !important;
+    border-left: 6px solid #94a3b8 !important;
+}
+
+.tabla-estadistica {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+}
+
+.fila-estadistica {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    border-left: 6px solid #2563eb;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+.fila-estadistica span {
+    font-weight: 700;
+    color: #334155;
+}
+
+.fila-estadistica strong {
+    font-size: 22px;
+    color: #0f172a;
+}
+
+.card-grafico canvas {
+    width: 100% !important;
+    height: 360px !important;
+}
+
+#heatmap {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    min-height: 260px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+@media (max-width: 950px) {
+    .filtros {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-competencia {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        margin: 15px;
+        font-size: 24px;
+    }
+
+    .panel,
+    .dashboard-competencia,
+    #heatmap {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .filtros,
+    .panel-colores {
+        grid-template-columns: 1fr;
+    }
+}

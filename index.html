@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Analizador de Niveles de Logro</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Estadisticas Nivel de logro - IE AGROPECUARIO 07</h1>
+
+    <div class="panel filtros">
+
+        <div class="campo">
+            <label>Cargar Excel</label>
+            <input type="file" id="excelFile" accept=".xlsx,.xls">
+        </div>
+
+        <div class="campo">
+            <label>Área</label>
+            <select id="sheetSelector">
+                <option value="">Seleccione una hoja</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label>Competencia</label>
+            <select id="competenciaSelector">
+                <option value="">Seleccione una competencia</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label>Mostrar datos como</label>
+            <select id="modoVisualizacion">
+                <option value="cantidad">Cantidades</option>
+                <option value="porcentaje">Porcentajes</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="panel colores">
+        <h3>Colores del gráfico</h3>
+
+        <div class="panel-colores">
+            <label>AD</label>
+            <input type="color" id="colorAD" value="#2563eb">
+
+            <label>A</label>
+            <input type="color" id="colorA" value="#16a34a">
+
+            <label>B</label>
+            <input type="color" id="colorB" value="#f59e0b">
+
+            <label>C</label>
+            <input type="color" id="colorC" value="#dc2626">
+        </div>
+    </div>
+
+    <div class="dashboard-competencia">
+
+        <div class="card-estadistica">
+            <div id="resultadoCompetencia">
+                <p class="mensaje">Seleccione un área y una competencia.</p>
+            </div>
+        </div>
+
+        <div class="card-grafico">
+            <canvas id="barChart"></canvas>
+        </div>
+
+    </div>
+
+    <div id="heatmap"></div>
+
+    <script src="js/excel.js"></script>
+    <script src="js/analysis.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/heatmap.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
